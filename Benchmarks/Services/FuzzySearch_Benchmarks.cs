@@ -32,6 +32,9 @@ namespace Benchmarks.Services
 
         [Benchmark]
         public int LevenshteinDistance() => _levenshteinFuzzySearch.ComputeSimilarity(String1.Value, String2.Value);
+
+        [Benchmark(Baseline = true)]
+        public int LevenshteinDistanceBaseline() => _levenshteinFuzzySearch.ComputeSimilarity_Baseline(String1.Value, String2.Value);
     }
 
     /// <remarks>
